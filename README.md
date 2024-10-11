@@ -57,6 +57,10 @@ d'échec lors de l'enregistrement des données, le modèle Saga est appliqué en
   - log.info()
   - log.error()
 
+## **Modèle Saga en cas d'échec lors de l'enregistrement des données**
+
+![image](https://github.com/user-attachments/assets/6ac9817e-7977-4d3c-87aa-2bfacd4b8283)
+
     
 
  
