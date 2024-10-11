@@ -1,0 +1,31 @@
+syntax="proto3";
+
+package net.devh.boot.grpc.example;
+
+option java_multiple_files = true;
+option java_package = "net.devh.boot.grpc.examples.lib";
+option java_outer_classname = "CarPaymentProto";
+
+service CarPaymentService{
+
+  rpc rentPayment(CarRequest) returns (PaymentReply);
+  rpc deletePayment(DeleteRequest) returns (PaymentReply);
+}
+
+message CarRequest{
+
+  string carId=1;
+  double price=2;
+
+}
+
+message PaymentReply{
+
+  bool isSuccess=1;
+  string paymentId=2;
+}
+
+message DeleteRequest{
+
+  string paymentId=1;
+}
