@@ -8,7 +8,10 @@ option java_outer_classname = "CarPaymentProto";
 
 service CarPaymentService{
 
+  //Requête pour stocker la transaction selon la commande
   rpc rentPayment(CarRequest) returns (PaymentReply);
+
+  //Opération de compensation en cas d'échec
   rpc deletePayment(DeleteRequest) returns (PaymentReply);
 }
 

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 public class GlobalExceptionHandler {
 
+
+    //Exception handler globale, si le programme ranconte l'exception Exception, cette méthode sera rapélée automatiquement
     @ExceptionHandler(Exception.class)
     public ProblemDetail exception(Exception e) {
 

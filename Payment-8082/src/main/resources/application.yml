@@ -21,3 +21,7 @@ spring:
 grpc:
   server:
     port: 9000
+
+springdoc:
+  api-docs:
+    path: /api-doc

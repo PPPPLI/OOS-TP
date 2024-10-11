@@ -13,10 +13,13 @@ import java.sql.SQLException;
 public class PaymentExceptionHandler implements ServerInterceptor {
 
     @Override
-    public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(ServerCall<ReqT, RespT> serverCall, Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
+    public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+            ServerCall<ReqT, RespT> serverCall, Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
 
+        //Récupèrer le listener d'orgine
         ServerCall.Listener<ReqT> listener = serverCallHandler.startCall(serverCall, metadata);
 
+        //Créer un nouveau listener afin de retouner les différents status en cas d'échec
         return new ForwardingServerCallListener.SimpleForwardingServerCallListener<>(listener) {
             @Override
             public void onHalfClose() {
@@ -26,12 +29,15 @@ public class PaymentExceptionHandler implements ServerInterceptor {
                 }catch (Exception e){
 
                     log.error("Exception occurred: {}", e.getMessage(), e);
+
+                    //Convertir l'exception en Status en respectant le prototype de Grpc
                     StatusRuntimeException statusException = mapExceptionToStatus(e);
                     serverCall.close(statusException.getStatus(),new Metadata());
                 }
             }
         };
     }
+
 
     private StatusRuntimeException mapExceptionToStatus(Exception e) {
 

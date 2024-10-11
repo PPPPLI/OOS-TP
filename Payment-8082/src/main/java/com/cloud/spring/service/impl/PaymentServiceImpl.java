@@ -24,15 +24,18 @@ public class PaymentServiceImpl extends CarPaymentServiceGrpc.CarPaymentServiceI
     @Override
     public void rentPayment(CarRequest request, StreamObserver<PaymentReply> responseObserver) {
 
+        //Stocker la donnée Payment pour chaque requête provenant de RentCar service
         paymentRepository.save(Payment.builder().plateNumber(request.getCarId())
                 .paymentAmount(request.getPrice())
                 .paymentDate(LocalDateTime.now())
                 .build());
-
+        //Retourner la donnée avec un type prédéfini
         responseObserver.onNext(PaymentReply.newBuilder().setIsSuccess(true).build());
+        //Clôturer la connexion
         responseObserver.onCompleted();
     }
 
+    //Requête de compensation en cas d'échec
     @Override
     public void deletePayment(DeleteRequest request, StreamObserver<PaymentReply> responseObserver) {
 

@@ -20,12 +20,14 @@ public class CarController {
     CarPaymentServiceImpl carPaymentService;
 
 
+    //Premier api de test
     @GetMapping("/")
     public String hello() {
 
         return "Hello";
     }
 
+    //Ajouter la nouvelle voiture
     @PostMapping("/cars/add")
     public ResponseEntity<Car> addCar(@RequestBody Car car) {
 
@@ -35,6 +37,7 @@ public class CarController {
 
     }
 
+    //Rechercher la voiture correspondante par la plaque d'immatriculation
     @GetMapping("/cars/{plateNumber}")
     public ResponseEntity<Car> getCar(@PathVariable String plateNumber, String... a) {
 
@@ -43,6 +46,7 @@ public class CarController {
         return ResponseEntity.ok(car);
     }
 
+    //Louer la voiture
     @PutMapping("cars/rent")
     public ResponseEntity<?> rentCar(@RequestBody Car car
     ) {
@@ -64,6 +68,7 @@ public class CarController {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("Please try later");
     }
 
+    //Rendre la voiture
     @PutMapping("/cars/back/{plateNumber}")
     public ResponseEntity<String> getBackCar(@PathVariable String plateNumber) {
 
