@@ -2,7 +2,7 @@
 
 <h3><b>Introduction</b></h3>
 
-e projet est un simple système de location de voitures. Il intègre des concepts abordés en cours tels que les microservices, les API REST, ainsi que gRPC.
+Ce projet est un simple système de location de voitures. Il intègre des concepts abordés en cours tels que les microservices, les API REST, ainsi que gRPC.
 Chaque service est associé à une base de données spécifique (MySQL) afin de garantir que les données sont stockées localement. Entre les services, en cas 
 d'échec lors de l'enregistrement des données, le modèle Saga est appliqué en effectuant des compensations pour assurer la cohérence des données.
 
