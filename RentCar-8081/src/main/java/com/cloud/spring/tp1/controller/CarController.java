@@ -5,6 +5,7 @@ import com.cloud.spring.tp1.service.CarService;
 import com.cloud.spring.tp1.service.impl.CarPaymentServiceImpl;
 import jakarta.annotation.Resource;
 import net.devh.boot.grpc.examples.lib.PaymentReply;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CarController {
 
-    @Resource
+    @Autowired
     CarService carService;
 
-    @Resource
+    @Autowired
     CarPaymentServiceImpl carPaymentService;
 
 
