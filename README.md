@@ -21,7 +21,7 @@ d'échec lors de l'enregistrement des données, le modèle Saga est appliqué en
    ![image](https://github.com/user-attachments/assets/003af4a1-d0bc-4f89-b3c7-4f6bd4c9c0b4)
    
 3. Démarrer les deux services de Springboot repectivement
-4. Tester les APIs selon l'outil de votre choix (Postman, HTTP Client...)
+4. Tester les APIs selon l'outil de votre choix (Postman, HTTP Client...) ou Exécuter les unit tests.
 
 
 ## **URL d'api-doc**
