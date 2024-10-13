@@ -53,13 +53,31 @@ d'échec lors de l'enregistrement des données, le modèle Saga est appliqué en
 
 ## **Imprimer l'historique de log dans le terminal**
 
-  - **@slf4j**
+  - @slf4j
   - log.info()
   - log.error()
 
 ## **Modèle Saga en cas d'échec lors de l'enregistrement des données**
 
 ![image](https://github.com/user-attachments/assets/6ac9817e-7977-4d3c-87aa-2bfacd4b8283)
+
+## **Unit Test**
+
+- @SpringBootTest
+- @AutoConfigureMockMvc
+- @Test
+- @MockBean
+
+### **L'un des exemples de test**
+![image](https://github.com/user-attachments/assets/8e46fad4-6077-4584-aba9-0bb07326ccb2)
+
+![image](https://github.com/user-attachments/assets/69ad9907-5dec-43ab-becd-2b6845bd0d88)
+
+![image](https://github.com/user-attachments/assets/579044fc-3fab-434d-8014-8b31c6bd94b5)
+![image](https://github.com/user-attachments/assets/c6442012-07cf-41d9-bbc4-b90a754db916)
+
+
+
 
     
 
